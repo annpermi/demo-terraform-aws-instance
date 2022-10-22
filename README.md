@@ -31,3 +31,6 @@ terraform state list
    `terraform destroy` - get rid of all our infrastructure
 
 Go to AWS check EC2 instances
+
+5. Create variables and outputs files
+   `terraform output` - list of all outputs
