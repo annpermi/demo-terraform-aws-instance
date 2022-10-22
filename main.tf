@@ -14,12 +14,11 @@ provider "aws" {
   region  = "us-east-1"
 }
 
-/* EC2 INSTANCE (Amazon Elastic Compute Cloud)*/
 resource "aws_instance" "app_server" {
   ami           = "ami-09e67e426f25ce0d7"
   instance_type = "t2.micro"
 
   tags = {
-    Name = "ExampleAppServerInstance"
+    Name = var.instance_name
   }
 }
