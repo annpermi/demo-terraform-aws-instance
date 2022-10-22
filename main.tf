@@ -1,4 +1,10 @@
 terraform {
+  backend "remote" {
+    organization = "annpermi-terraform-demos"
+    workspaces {
+      name = "Example-Workspace"
+    }
+  }
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -19,6 +25,6 @@ resource "aws_instance" "app_server" {
   instance_type = "t2.micro"
 
   tags = {
-    Name = var.instance_name
+    Name = "ExampleAppServerInstance"
   }
 }

@@ -34,3 +34,20 @@ Go to AWS check EC2 instances
 
 5. Create variables and outputs files
    `terraform output` - list of all outputs
+
+6. Store state remotely
+   Add backend remote to the main.tf
+
+```
+backend "remote" {
+    organization = "ACG-Terraform-Demos"
+    workspaces {
+      name = "Example-Workspace"
+    }
+  }
+```
+
+`terraform login` - login to your terraform and copy tokens
+`terraform init`- initialize project
+
+In Terraform account add variables to your new workspace: `AWS_ACCESS_KEY_ID` and `AWS_ACCESS_KEY_ID` as sensitive
